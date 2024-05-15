@@ -19,12 +19,12 @@ class DatePickerFragment : androidx.fragment.app.DialogFragment() {
 
         // Get the system current date
 //        val year = calendar.get(Calendar.YEAR)
-        val year = LocalDB.getBirthDate(activity!!)!!.toInt()
+        val year = LocalDB.getBirthDate(requireActivity())!!.toInt()
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         val dialog = DatePickerDialog(
-                activity!!, // Context
+                requireActivity(), // Context
                 // Put 0 to system default theme or remove this parameter
                 android.R.style.Theme_Holo_Light_Dialog_MinWidth, // Theme
                 activity as (DatePickerDialog.OnDateSetListener), // DatePickerDialog.OnDateSetListener
